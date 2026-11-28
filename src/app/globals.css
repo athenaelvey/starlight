@@ -46,6 +46,10 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --color-rose: var(--rose);
+  --color-progress-low: var(--progress-low);
+  --color-progress-mid: var(--progress-mid);
+  --color-progress-over: var(--progress-over);
 }
 
 :root {
@@ -106,6 +110,10 @@
   --chart-3: oklch(0.58 0.17 5);
   --chart-4: oklch(0.78 0.1 320);
   --chart-5: oklch(0.65 0.12 15);
+  --rose: oklch(0.62 0.17 5);
+  --progress-low: oklch(0.85 0.08 350);
+  --progress-mid: oklch(0.7 0.15 355);
+  --progress-over: oklch(0.5 0.2 10);
 }
 
 @layer base {
@@ -118,4 +126,12 @@
   html {
     @apply font-sans;
   }
+}
+
+@utility stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 6px,
+    oklch(1 0 0 / 0.2) 6px 12px
+  );
 }
